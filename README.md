@@ -1,3 +1,7 @@
+[Client Deployed Url](https://movie-qr-frontend.vercel.app/) \
+[Server Deployed Url](https://qr-code-generator-nestjs-production.up.railway.app/) \
+[Swagger Documentation](https://qr-code-generator-nestjs-production.up.railway.app/api)
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
