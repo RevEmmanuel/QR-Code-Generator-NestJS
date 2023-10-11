@@ -32,6 +32,23 @@
 $ npm install
 ```
 
+## Configuring the app
+
+```markdown
+# url for client-side application
+DEPLOYED_URL=
+
+# port that app will be listening on
+PORT=
+
+# db credentials
+DB_HOST=
+DB_PORT=
+DB_PASSWORD=
+DB_USERNAME=
+DB_NAME=
+```
+
 ## Running the app
 
 ```bash
