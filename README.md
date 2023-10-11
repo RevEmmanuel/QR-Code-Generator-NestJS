@@ -75,8 +75,8 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-[Client Deployed Url](https://movie-qr-frontend.vercel.app/)
-[Server Deployed Url](https://qr-code-generator-nestjs-production.up.railway.app/)
+[Client Deployed Url](https://movie-qr-frontend.vercel.app/) \
+[Server Deployed Url](https://qr-code-generator-nestjs-production.up.railway.app/) \
 [Swagger Documentation](https://qr-code-generator-nestjs-production.up.railway.app/api)
 
 ## Support
