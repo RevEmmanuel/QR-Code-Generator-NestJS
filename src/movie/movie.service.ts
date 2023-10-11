@@ -17,28 +17,34 @@ export class MovieService {
     const movies: any = JSON.parse(moviesJson);
     // const movies = await this.shuffleArray(moviesGotten);
 
-    // Generate 10 random movies
+    // Generate 10 random movies without repeats
     const randomMovies = [];
-    for (let i = 0; i < 10; i++) {
+    const usedMovieIndices = new Set();
+
+    while (randomMovies.length < 10) {
       const randomMovieIndex = Math.floor(Math.random() * movies.length);
-      const randomMovie = movies[randomMovieIndex];
 
-      // Convert the random movie to a new movie object
-      const newMovie = new Movie();
-      newMovie.qr_slug = qrSlug;
-      newMovie.title = randomMovie.Title;
-      newMovie.release_date = randomMovie.Released;
-      newMovie.genre = randomMovie.Genre;
-      newMovie.image = randomMovie.Poster;
-      newMovie.rating = randomMovie.imdbRating;
+      if (!usedMovieIndices.has(randomMovieIndex)) {
+        usedMovieIndices.add(randomMovieIndex);
 
-      // Save the new movie to the database
-      await this.movieRepository.save(newMovie);
+        const randomMovie = movies[randomMovieIndex];
 
-      // Add the new movie to the random movies array
-      randomMovies.push(newMovie);
+        // Convert the random movie to a new movie object
+        const newMovie = new Movie();
+        newMovie.qr_slug = qrSlug;
+        newMovie.title = randomMovie.Title;
+        newMovie.release_date = randomMovie.Released;
+        newMovie.genre = randomMovie.Genre;
+        newMovie.image = randomMovie.Poster;
+        newMovie.rating = randomMovie.imdbRating;
+
+        // Save the new movie to the database
+        await this.movieRepository.save(newMovie);
+
+        // Add the new movie to the random movies array
+        randomMovies.push(newMovie);
+      }
     }
-
     return randomMovies;
   }
 
